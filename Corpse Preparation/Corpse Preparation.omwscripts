@@ -1,0 +1,9 @@
+PLAYER: scripts/CorpsePrep/NPC.lua
+GLOBAL: scripts/CorpsePrep/UseHandlers.lua
+GLOBAL: scripts/CorpsePrep/Spells.lua
+PLAYER: scripts/CorpsePrep/CorpseHarvest_P.lua
+GLOBAL: scripts/CorpsePrep/CorpseHarvestMechanics.lua
+GLOBAL: scripts/CorpsePrep/CorpsePlacementMechanics.lua
+PLAYER: scripts/CorpsePrep/CorpsePlacement.lua
+NPC, CREATURE: scripts/CorpsePrep/CreatureEvents.lua
+NPC, CREATURE: scripts/CorpsePrep/Spellsjj.lua
