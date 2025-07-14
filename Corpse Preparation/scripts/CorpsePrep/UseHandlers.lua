@@ -37,6 +37,19 @@ local function useHandler(obj)
 	item:remove(1)
 	core.sendGlobalEvent("SpawnProp", "KSN_Skeleton_Weak_PROP")
     end
+    if obj.recordId == "ksn_bonelord" then
+	local PlayerInventory = types.Actor.inventory(world.players[1])
+	local item = PlayerInventory:find('ksn_Bonelord')
+	item:remove(1)
+	core.sendGlobalEvent("SpawnProp", "CorpsePreparation_Bonelord")
+    end
+    if obj.recordId == "ksn_skeleton_full" then
+	local PlayerInventory = types.Actor.inventory(world.players[1])
+	local item = PlayerInventory:find('ksn_skeleton_full')
+	item:remove(1)
+	core.sendGlobalEvent("SpawnProp", "_skeleton")
+    end
+
 end
         I.ItemUsage.addHandlerForType(types.Miscellaneous, useHandler)
 

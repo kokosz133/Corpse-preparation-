@@ -17,7 +17,7 @@ local function RayCast(key)
 	local faced = nearby.castRenderingRay(camera.getPosition(), camera.getPosition() + camera.viewportToWorldVector(util.vector2(0.5, 0.5))* 8192, {ignorePlayer = true})
 
 		if faced.hitObject then
-			if types.NPC.objectIsInstance(faced.hitObject) == true then
+			if types.NPC.objectIsInstance(faced.hitObject) == true or types.Creature.record(faced.hitObject).type == 2 then
 				if types.Actor.isDead(faced.hitObject) == true then
 					if (self.position - faced.hitObject.position):length() < 205 then
 						if HarvestedCorpses:get(faced.hitObject.id) == faced.hitObject.id then

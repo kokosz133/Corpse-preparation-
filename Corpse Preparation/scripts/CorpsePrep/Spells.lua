@@ -1,6 +1,7 @@
 local types = require('openmw.types')
 local core = require('openmw.core')
 local world = require('openmw.world')
+local I = require("openmw.interfaces")
 local PlayerInventory = world.players[1]
 local ActorToReanimate = nil
 local WasAnimationPlayed = false
@@ -19,7 +20,7 @@ local function OnUpdate()
 	
 
 	for i, actor in ipairs(world.activeActors) do 	 
-			if actor.recordId == "ksn_zombie_summon_prop" or actor.recordId == "ksn_skeleton_weak_prop" then
+			if actor.recordId == "ksn_zombie_summon_prop" or actor.recordId == "ksn_skeleton_weak_prop" or actor.recordId == "corpsepreparation_bonelord" or actor.recordId == "_skeleton"  then
 					local effect = types.Actor.activeSpells(actor):isSpellActive("ksn_reanimate")
 					if effect == true then
 							
@@ -28,6 +29,7 @@ local function OnUpdate()
 										ReanimEffect = world.createObject('sprigganup', 1)
 										ReanimEffect:teleport(actor.cell.name, actor.position)
 										ActorToReanimate = actor
+										core.sendGlobalEvent("NecromancyCrime")
 										WasAnimationPlayed = false
 										return
 									
