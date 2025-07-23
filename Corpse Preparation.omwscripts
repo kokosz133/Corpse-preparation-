@@ -10,3 +10,8 @@ PLAYER: scripts/CorpsePrep/UI_P.lua
 PLAYER, NPC, CREATURE: scripts/CorpsePrep/Crime_C.lua
 NPC, CREATURE: scripts/CorpsePrep/CreatureEvents.lua
 NPC, CREATURE: scripts/CorpsePrep/Spellsjj.lua
+
+NPC: scripts/CorpsePrep/Actor.lua
+GLOBAL: scripts/CorpsePrep/Global.lua
+MENU: scripts/CorpsePrep/Menu.lua
+PLAYER: scripts/CorpsePrep/Player.lua

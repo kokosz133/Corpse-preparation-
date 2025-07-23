@@ -70,13 +70,13 @@ end
 
 local function SetBlackSoul(actor)
 				local PlayerInventory = world.players[1]
-					local BlackSoulGem = types.Actor.inventory(PlayerInventory):findAll('Misc_SoulGem_Grand')
+					local BlackSoulGem = types.Actor.inventory(PlayerInventory):findAll('AB_Misc_SoulGemBlack')
 					for i, gems in ipairs(BlackSoulGem) do
 						local isDead = types.Actor.isDead(actor)
 						if isDead == true then
 							gems:remove(1)
 							world.players[1]:sendEvent("ShowMessage", core.getGMST("sSoultrapSuccess"))
-							money = world.createObject('Misc_SoulGem_Grand', 1)
+							money = world.createObject('AB_Misc_SoulGemBlack_filled', 1)
 							money.type.setSoul(money, "CorpsePreparation_soul")
 							money:moveInto(types.Actor.inventory(PlayerInventory))
 							effect = types.Actor.activeEffects(actor):remove("soultrap")
